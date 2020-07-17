@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import MyWork from "./components/MyWork";
+import Software from "./components/Software";
+import Default from "./components/Default";
+import "./App.css";
+
+class App extends Component {
+  state = {
+    changeColor: "white"
+  }
+
+  changeColor = color => {
+    this.setState({ color });
+  };
+  render() {
+    return (
+      <div className="App" style={{ color: this.state.color}}>
+        
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={MyWork} />
+            <Route path="/software" component={Software} onClick={() => this.changeColor("black")}/>
+            <Route component={Default} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
