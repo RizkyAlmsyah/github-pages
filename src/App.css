@@ -1,11 +1,11 @@
 @font-face{
   font-family: Gravity-Regular;
-  src: url("/static/font/Gravity-Regular.otf");
+  src: url("../static/font/Gravity-Regular.otf");
 }
 
 @font-face{
   font-family: Gravity-Book;
-  src: url("/static/font/Gravity-Book.otf");
+  src: url("../static/font/Gravity-Book.otf");
 }
 
 :root{

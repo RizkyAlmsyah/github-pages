@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App" style={{ color: this.state.color}}>
         
-        <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/" component={MyWork} />
             <Route path="/software" component={Software} onClick={() => this.changeColor("black")}/>
